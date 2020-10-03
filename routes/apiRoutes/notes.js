@@ -1,39 +1,34 @@
 const router = require('express').Router();
-const path = require('path');
-const { stringify } = require('querystring');
-const {notes} = require('../../db/db.json');
-const {createNote} = require('../../lib/createNotes');
-const fs = require('fs');
+const { notes } = require('../../db/db.json');
+const { createNote, deleteNote } = require('../../lib/manageNotes');
+
 
 router.get('/notes', (req, res) => {
-   
-    let results = notes;
-    if (results){
-    res.json(results);
+    if (notes) {
+        console.log ("noteswali:  "+ notes);
+        res.json(notes);
     }
-    else{
-    res.send(404);
+    else {
+        res.status(400).send('The note is not properly formatted.');
     }
 });
 
 router.post('/notes', (req, res) => {
-
-   let note = notes;
-
-   
     // if any data in req.body is incorrect, send 400 error back
     if (req.body.title && req.body.text) {
-        const results = createNote(req.body, note);
-        fs.writeFileSync(
-            path.join(__dirname, '../../db/db.json'),
-            JSON.stringify({notes: results})
-        );
+        const results = createNote(req.body, notes);
         res.json(results);
-
     } else {
         res.status(400).send('The note is not properly formatted.');
-      
     }
+});
+
+router.delete('/notes/:id', (req, res) => {
+    const id = req.params.id;
+    console.log("res  before " + notes);
+    const results = deleteNote(id, notes);
+    console.log("res  after " + results);
+    res.json(results);
 });
 
 module.exports = router;
