@@ -4,7 +4,7 @@ const { createNote, deleteNote, readNote } = require('../../lib/manageNotes');
 const fs = require('fs');
 const path = require('path');
 
-
+//========================== GET ROUTE ===========================================//
 router.get('/notes', (req, res) => {
 
     const newNotes = readNote();
@@ -17,6 +17,7 @@ router.get('/notes', (req, res) => {
     }
 });
 
+//========================== POST ROUTE ===========================================//
 router.post('/notes', (req, res) => {
     // if any data in req.body is incorrect, send 400 error back
     const newNotes = readNote();
@@ -29,13 +30,13 @@ router.post('/notes', (req, res) => {
     }
 });
 
+//========================== DELETE ROUTE ===========================================//
+
 router.delete('/notes/:id', (req, res) => {
     const id = req.params.id;
     const newNotes = readNote();
     const newNotesObj = JSON.parse(newNotes);
-    console.log("res  before " + newNotes);
     const results = deleteNote(id, newNotesObj.notes);
-    console.log("res  after " + results);
     res.json(results);
 });
 
