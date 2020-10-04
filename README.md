@@ -1,7 +1,3 @@
-# Note Taker Starter Code
-
-  ![](https://img.shields.io/badge/License-ISC-blue.svg)
-
   # Note Taker
 
 
@@ -33,28 +29,24 @@
 
   <a name="license"></a> 
   ## 4. License
+   ![](https://img.shields.io/badge/License-ISC-blue.svg)
   
-  Application will directly take you to an introductory screen. Once you click on 'Get Started", the application will start with options to read,write and delete the notes
+  [ISC](https://opensource.org/licenses/ISC)
+
+  URL: https://opensource.org/licenses/ISC
 
   <a name="contributing"></a>
   ## 5. Contributing
     
-  Please feel free to contribute. However, please send a note to the email address informing us of the contribution
+  Please feel free to contribute. However, please send a note to the email address below informing us of the contribution
 
   <a name="tests"></a> 
   ## 6. Test
       
   Validation is perfomed to ensure that data is not empty
 
-  <a name="license"></a> 
-  ## 7. License
-      
-  [ISC](https://opensource.org/licenses/ISC)
-
-  URL: https://opensource.org/licenses/ISC
-
   <a name="questions"></a> 
-  ## 8. Questions
+  ## 7. Questions
   
   GitHub Username: gtankha
 
