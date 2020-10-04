@@ -50,7 +50,7 @@
   
   GitHub Username: gtankha
 
-  GitHub Profile: https://github.com/gtankha/notetaker
+  GitHub: https://github.com/gtankha/notetaker
 
   Deployed Application: https://notetakerclass.herokuapp.com/
   
